@@ -7,7 +7,7 @@ import Dashboard from './components/pages/dashboard'
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="container" style={{'width':'100%'}}>
         <Router>
           <Switch>
             <Route exact  path="/" component={ Login }></Route>
