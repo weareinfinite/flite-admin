@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import fireapp from '../../api/firebaseapp'
-
+import Card from '../ui/card'
+import Navigation from '../ui/navigation'
 export default class Login extends Component {
 
     constructor(props) {
@@ -37,7 +38,7 @@ export default class Login extends Component {
         if(!this.state.quotes.length && this.state.initialLoad) return 'Loading....';
 
         return this.state.quotes.map((q,i) => (
-            <li key={q.id}>{q.data.text}</li>
+            <Card key={q.id} title={q.data.text}body={q.data.text}></Card>
         ))
     }
 
@@ -45,6 +46,7 @@ export default class Login extends Component {
     render() {
 
         return(<div>
+            <Navigation/>
             <h3>Dash</h3>
             <ul>
                 {this.renderQuotesList()}
